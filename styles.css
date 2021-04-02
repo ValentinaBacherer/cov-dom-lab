@@ -1,10 +1,7 @@
-html{
-    border: 1px solid rgba(0, 0, 0, 0.406);
-}
 
 .box{
     background-color: black;
-    color:rgb(57, 57, 57);
+    color:rgb(7, 7, 7);
     height: 100px;
     width: 100px;
     line-height: 100px;
@@ -16,11 +13,13 @@ html{
 }
 .box:hover{
     color: white;
+    background-color: rgba(0, 0, 0, 0.95);
 }
 .rowFlex{
     display:flex;
     flex-direction: row;
     align-items: center;
+    color: r
 }
 .divBtn{
     justify-content: center;
@@ -29,7 +28,6 @@ html{
     margin: 1rem ;
     justify-content: flex-start;
     flex-wrap: wrap;
-    color: rgba(0, 0, 255, 0.119);
 }
 body{
     background-color: aliceblue;
