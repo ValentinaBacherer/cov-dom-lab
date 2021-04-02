@@ -1,0 +1,41 @@
+html{
+    border: 1px solid rgba(0, 0, 0, 0.406);
+}
+
+.box{
+    background-color: black;
+    color:rgb(57, 57, 57);
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    font-size: xx-large;
+    margin: 0.9px;
+}
+.box:hover{
+    color: white;
+}
+.rowFlex{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+.divBtn{
+    justify-content: center;
+}
+.divBox{
+    margin: 1rem ;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    color: rgba(0, 0, 255, 0.119);
+}
+body{
+    background-color: aliceblue;
+}
+button{
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 255, 0.1);
+    border-radius: 5px;
+}
