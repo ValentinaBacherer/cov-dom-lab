@@ -1,4 +1,4 @@
-var counter = 0
+let counter = 0
 const colorsArray = ['plum', 'orquid', 'violet', 'orquid', 'darkviolet', 'purple', 'orange', 'lightblue', 'orange', 'rosybrown', 'indigo', 'blueviolet', 'gold']
 
 const createBoxBtn = document.createElement('button')
@@ -16,34 +16,32 @@ const createBox = () => {
     counter++
     box.id = counter
     box.className = 'box'
-    box.innerHTML = counter
+    const text = document.createTextNode(counter)
     box.addEventListener('click', colorChange)
     box.addEventListener('dblclick', remove)
+    box.addEventListener('mouseover', () => {
+        box.appendChild(text)
+    })
+    box.addEventListener('mouseout', () => {
+        box.removeChild(text)
+    })
     const divButton = document.getElementById('container')
     divButton.appendChild(box)
 }
 
 const remove = (e) => {
-    const allSquares = document.getElementsByClassName('box')
-    let index
-    for (i = 0; i < allSquares.length; i++) {
-        if (allSquares[i].id === e.target.id) {
-            index = i
-        }
-    }
     if (Number(e.target.id) % 2 === 0) {
-        if (index + 1 <= allSquares.length - 1) {
-            const box = allSquares[index + 1]
-            box.parentElement.removeChild(box)
+        if (e.target.nextSibling != null) {
+            e.target.nextSibling.remove()
         } else {
-            alert('No squares to remove.')
+            alert("I don't have next sibling")
         }
+
     } else {
-        if (index - 1 >= 0) {
-            const box = allSquares[index - 1]
-            box.parentElement.removeChild(box)
+        if (e.target.previousSibling != null) {
+            e.target.previousSibling.remove()
         } else {
-            alert('No squares to remove.')
+            alert("I don't have previus sibling")
         }
     }
 }
@@ -54,12 +52,7 @@ const colorChange = (e) => {
     const color = colorsArray[random]
     const box = document.getElementById(e.target.id)
     box.style.backgroundColor = color
-    box.style.color = 'rgba(0, 0, 0, 0.15)'
 }
-
-
-
-
 
 
 window.addEventListener('DOMContentLoaded', function () {
